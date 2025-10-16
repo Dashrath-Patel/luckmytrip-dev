@@ -1,4 +1,4 @@
-import axios from '../../lib/axios';
+import axios from 'axios';
 
 const BASE_URL = '/api/v1/products';
 

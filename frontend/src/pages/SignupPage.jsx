@@ -64,12 +64,12 @@ const SignupPage = () => {
         <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
           <span className="text-blue-600 font-bold text-xl">🔐</span>
         </div>
-        <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
-        <p className="text-gray-600 mt-2">Sign in to your dashboard</p>
+        <h1 className="font-berlin text-2xl font-bold text-gray-900">Welcome Back</h1>
+        <p className="font-montserrat text-gray-600 mt-2">Sign in to your dashboard</p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="Fullname" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="Fullname" className="font-montserrat block text-sm font-medium text-gray-700 mb-2">
             Fullname
           </label>
           <input
@@ -84,7 +84,7 @@ const SignupPage = () => {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="font-montserrat block text-sm font-medium text-gray-700 mb-2">
             Email
           </label>
           <input
@@ -93,13 +93,13 @@ const SignupPage = () => {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="font-montserrat w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="Phone" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="Phone" className="font-montserrat block text-sm font-medium text-gray-700 mb-2">
             Phone no.
           </label>
           <input 
@@ -110,13 +110,13 @@ const SignupPage = () => {
             maxLength={10}
             
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="font-montserrat w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="password" className="font-montserrat block text-sm font-medium text-gray-700 mb-2">
             Password
           </label>
           <input
@@ -126,13 +126,13 @@ const SignupPage = () => {
             value={password}
             
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="font-montserrat w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
 
         {/* {error && (
-          <div className="text-sm text-red-600 bg-red-50 p-3 rounded-md">
+          <div className="font-montserrat text-sm text-red-600 bg-red-50 p-3 rounded-md">
             {error}
           </div>
         )} */}
@@ -140,16 +140,16 @@ const SignupPage = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="font-montserrat w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           {loading ? 'Signing in...' : 'Sign In'}
         </button>
 
       </form>
-      <h3 className='text-center text-sm text-gray-400 mt-4 hover:text-blue-500 font-medium'><Link to={"/forgotpassword"}>forgot password ?</Link></h3>
-      <p className='mt-1 text-center text-sm text-gray-400'>
+      <h3 className='font-montserrat text-center text-sm text-gray-400 mt-4 hover:text-blue-500 font-medium'><Link to={"/forgotpassword"}>forgot password ?</Link></h3>
+      <p className='font-montserrat mt-1 text-center text-sm text-gray-400'>
         Already have an account?{" "}
-        <Link to='/login' className='font-medium text-blue-400 hover:text-blue-500'>
+        <Link to='/login' className='font-montserrat font-medium text-blue-400 hover:text-blue-500'>
           Login here <ArrowRight className='inline h-4 w-4 ' />
         </Link>
       </p>
