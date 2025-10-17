@@ -15,79 +15,63 @@ export
 
   }) {
   return (
-    <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl md:w-full w-[380px] h-[340px] md:h-[360px] flex items-end mb-7 lg:mb-0 hover:shadow-2xl transition-shadow duration-300">
-      {/* Background Image */}
+    <div className="relative font-montserrat bg-white rounded-3xl overflow-hidden shadow-md md:w-full w-[350px] h-[320px] flex items-end mb-7 lg:mb-0">
       <img
         src={mainImage}
         alt={location}
-        className="absolute inset-0 w-full h-full object-cover z-10"
+        className="inset-0 w-full max-w-full block h-full object-cover rounded-3xl z-10"
       />
-      
-      {/* Shade/Overlay */}
       <img
         src={shadeImage}
         alt={`${location} shade`}
-        className="absolute inset-0 w-full h-full object-cover z-20"
+        className="absolute inset-0 w-full max-w-full block h-full object-cover rounded-3xl z-20"
       />
       
-      {/* Content Overlay */}
-      <div className="absolute inset-0 z-30 p-5 md:p-6 flex flex-col justify-end">
-        
-        {/* All content at bottom with minimal gaps */}
-        <div className="flex flex-col gap-4">
-          
-          {/* WIN, Location and Badge Row */}
-          <div className="flex justify-between items-end">
-            {/* WIN Text */}
-            <div className="flex-1">
-              <h2 className="text-white font-extrabold text-[80px] md:text-[110px] leading-[0.75] font-berlin tracking-tight drop-shadow-lg">
-                {mainText}
-              </h2>
-            </div>
-            
-            {/* Location and Badge */}
-            <div className="flex flex-col items-end space-y-1">
-              <h3 className="text-white font-bold text-[40px] md:text-[55px] leading-[0.85] font-berlin tracking-tight drop-shadow-lg">
-                {location}
-              </h3>
-              <span className="inline-block bg-yellow-400 text-black font-bold py-1 px-3 md:py-2 md:px-4 rounded-lg text-xs md:text-sm whitespace-nowrap shadow-lg">
-                {subtitle}
-              </span>
-            </div>
+      <div className="absolute z-30 p-4 w-full flex flex-col h-full justify-between">
+        <div className="flex justify-between w-full h-[50%] items-center mt-5">
+          <div className="flex justify-start items-end">
+            <span className="md:ml-3 font-berlin text-white font-bold text-[70px] md:text-[105px] leading-[0.9] tracking-tight">
+              {mainText}
+            </span>
           </div>
+          <div className="flex flex-col items-end space-y-4">
+            <span className="text-white font-bold md:text-[60px] text-[30px] leading-[0.9] tracking-tight">
+              {location[0].toUpperCase() + location.slice(1)}
+            </span>
 
-          {/* Price and Tickets Row */}
-          <div className="flex justify-between items-end">
-            {/* Left Side - Price and Date */}
-            <div className="flex flex-col space-y-2">
-              {/* Price */}
-              <div className="flex items-center gap-1">
-                <div className="flex flex-col leading-[1.1]">
-                  <span className="text-white text-sm md:text-base font-bold">Buy</span>
-                  <span className="text-white text-xs md:text-sm font-medium">{currency}</span>
-                </div>
-                <span className="text-yellow-400 text-4xl md:text-5xl font-extrabold font-berlin leading-[0.9]">
-                  {price}
-                </span>
-                <div className="flex flex-col leading-[1.1]">
-                  <span className="text-white text-sm md:text-base font-bold">From</span>
-                  <span className="text-white text-xs md:text-sm font-medium">{fromLocation}</span>
-                </div>
+          </div>
+        </div>
+
+        <div className="flex justify-between w-full h-[50%] items-center">
+          <div className="flex flex-col items-center justify-start space-y-5 md:ml-4 ml-1" >
+            <div className="mt-8 mb-0 flex justify-start items-center md:gap-1 ">
+              <div className="flex flex-col items-center justify-start leading-[0.7]">
+                <span className="block text-white text-sm md:text-lg font-bold">Buy </span>
+                <span className="text-white font-bold text-sm md:text-base">{currency}</span>
               </div>
-              
-              {/* Draw Date */}
-              <p className="text-white text-[10px] md:text-xs font-normal leading-[1.3] max-w-[200px]">
-                Draw Date: {drawDate} or<br/>earlier if the campaign is sold out
-              </p>
-            </div>
-            
-            {/* Right Side - Total Tickets */}
-            <div className="flex flex-col items-end">
-              <span className="text-white text-xs md:text-sm font-bold leading-none">Total Tickets</span>
-              <span className="text-yellow-400 text-5xl md:text-6xl font-extrabold font-berlin leading-[0.9] mt-0.5">
-                {totalTickets}
+              <span className="text-yellow-400 text-3xl md:text-5xl font-extrabold leading-[0.5] ">
+                {price}
               </span>
+              <div className="flex flex-col items-start justify-start leading-[0.7]">
+                <span className="block text-white md:text-lg text-sm font-bold">From</span>
+                <span className="text-white font-bold md:text-base text-sm align-top">{fromLocation}</span>
+              </div>
             </div>
+            <p className="text-white text-xs sm:text-sm font-normal flex-wrap">
+              Draw Date: {drawDate} or <br/> earlier if the campaign is sold out
+            </p>
+          </div>
+          
+          <div className="mt-8 mb-0 flex flex-col justify-start items-center space-y-3 space-x-1">
+            <span className="mt-1 inline-block bg-yellow-400 text-[#183f68] 
+             font-semibold md:py-1 py-1/2 px-1 md:px-3 rounded-md md:rounded-lg text-xs md:text-base">
+              {subtitle}
+            </span>
+            <div className="flex flex-col items-start pl-4">
+              <span className="text-white text-xs sm:text-sm opacity-95 font-extrabold leading-none">Total Tickets</span>
+              <span className="text-yellow-300 text-4xl sm:text-5xl opacity-95 font-extrabold mt-0 leading-none">{totalTickets}</span>
+            </div>
+
           </div>
         </div>
       </div>
